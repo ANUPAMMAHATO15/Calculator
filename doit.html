@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <title>Calculator</title>
+
+    <style>
+     body{
+        width:100%;
+        height:100vh;
+        background: darkblue;
+        background-image: linear-gradient(#cc2b5e, #753a88);
+     }
+
+     .btn{
+        height: 65px;
+        font-size: 1em;
+        border-radius: 0;
+        background-color: transparent;
+        color: white;
+        opacity: 75%;
+     }
+
+     .btn:hover,
+     .Solve{
+        font-weight: bold;
+        background-color: rgb(255, 255, 255);
+        color: black;
+     }
+
+     #Res{
+        background: transparent;
+        color:white;
+     }
+    </style>
+</head>
+<body class="d-grid">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<div class="mx-auto my-auto w-100 bg-dark bg-opacity-50 rounded shadow-lg p-3 d-grid shadow-lg" style="max-width:355px;">
+<input type="text" name="" id="res" required disabled placeholder="Calculator" class="form-control from-control-lg fs-3 text-end btn-dark bg-dark bg-opacity-50 border-0 rounded shadow-none" value="0">
+<div class="row row-cols-4 g-2 mt-1">
+<div class="col-6">
+    <button class="btn w-100 shadow-sm border-0" onclick="Clear()">AC</button>
+</div>
+<div class="col">
+    <button class="btn w-100 shadow-lg " onclick="Back()">Del</button>
+</div>
+<div class="col">
+    <button class="btn w-100 shadow-lg " onclick="Solve('.')">.</button>
+</div>
+<div class="col">
+    <button class="btn w-100 shadow-lg " onclick="Solve('7')">7</button>
+</div>
+<div class="col">
+    <button class="btn w-100 shadow-lg " onclick="Solve('8')">8</button>
+</div>
+<div class="col">
+    <button class="btn w-100 shadow-lg " onclick="Solve('9')">9</button>
+</div>
+<div class="col">
+    <button class="btn w-100 shadow-lg " onclick="Solve('+')">+</button>
+</div>
+<div class="col">
+    <button class="btn w-100 shadow-lg " onclick="Solve('4')">4</button>
+</div>
+<div class="col">
+    <button class="btn w-100 shadow-lg " onclick="Solve('5')">5</button>
+</div>
+<div class="col">
+    <button class="btn w-100 shadow-lg " onclick="Solve('6')">6</button>
+</div>
+<div class="col">
+    <button class="btn w-100 shadow-lg " onclick="Solve('-')">-</button>
+</div>
+<div class="col">
+    <button class="btn w-100 shadow-lg " onclick="Solve('1')">1</button>
+</div>
+<div class="col">
+    <button class="btn w-100 shadow-lg " onclick="Solve('2')">2</button>
+</div>
+<div class="col">
+    <button class="btn w-100 shadow-lg " onclick="Solve('3')" >3</button>
+</div>
+<div class="col">
+    <button class="btn w-100 shadow-lg " onclick="Solve('*')">X</button>
+</div>
+<div class="col">
+    <button class="btn w-100 shadow-lg " onclick="Solve('0')">0</button>
+</div>
+<div class="col">
+    <button class="btn w-100 shadow-lg " onclick="Solve('/')">/</button>
+</div>
+<div class="col">
+    <button class="btn w-100 shadow-lg " onclick="Solve('%')">%</button>
+</div>
+<div class="col">
+    <button class="btn w-100 shadow-lg  Solve" onclick="Result()">=</button>
+</div>
+</div>
+
+</div>
+
+<!--<script>
+    var i=document.getElementById('h');
+
+    function l(y){
+        if(i.value=="0"){
+            i.value=y;
+        }else{
+            i.value += y;
+        }
+    }
+  
+function c(){
+    i.value = "";
+    r();
+}
+
+    function hs(){
+        i.value=i.value.substr(0,i.value.length-1);
+        r();
+    }
+
+    function h(){
+        i.value=eval(i.value);
+    }
+
+    function r(){
+        if(i.value==""){
+            i.value="0";
+        }
+    }
+
+
+</script>-->
+
+<script>
+    function Solve(val) {
+   var v = document.getElementById('res');
+   v.value += val;
+}
+function Result() {
+   var num1 = document.getElementById('res').value;
+   var num2 = eval(num1);
+   document.getElementById('res').value = num2;
+}
+function Clear() {
+   var inp = document.getElementById('res');
+   inp.value = '';
+}
+function Back() {
+   var ev = document.getElementById('res');
+   ev.value = ev.value.slice(0,-1);
+}
+    </script>
+</body>
+</html>
